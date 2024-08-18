@@ -17,14 +17,6 @@ import {
 } from "../ui/dropdown-menu";
 import Link from "next/link";
 import { Separator } from "../ui/separator";
-import {
-  Command,
-  CommandEmpty,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "../ui/command";
-import { Input } from "../ui/input";
 
 export default function Header() {
   const account = useAccount();
@@ -32,9 +24,9 @@ export default function Header() {
   const { disconnect } = useDisconnect();
 
   return (
-    <header className="flex justify-between items-center px-8 py-4 border border-gray-200 shadow-sm">
-      <h1 className="font-bold text-xl">
-        <Link href="/">DataShore</Link>
+    <header className="flex justify-between items-center px-8 py-4">
+      <h1 className="font-bold text-xl text-macchiato-lavender">
+        <Link href="/">Telepathy</Link>
       </h1>
 
       {account.status === "connected" ? (
@@ -42,12 +34,10 @@ export default function Header() {
           <DropdownMenuTrigger asChild>
             <Avatar className="cursor-pointer">
               <AvatarImage src="" />
-              <AvatarFallback>
-                <CircleUserRound size={24} className="text-slate-700" />
-              </AvatarFallback>
+              <AvatarFallback className="bg-slate-200 p-2">UN</AvatarFallback>
             </Avatar>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="mr-4">
+          <DropdownMenuContent className="mr-8">
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <Link href="/profile" className="flex">
@@ -69,7 +59,7 @@ export default function Header() {
         </DropdownMenu>
       ) : (
         <Button
-          className="flex gap-2"
+          className="flex gap-2 bg-macchiato-gray-100 hover:bg-macchiato-gray-200 text-slate-900"
           onClick={() => {
             connectors[0].connect({ chainId: hederaTestnet.id });
           }}

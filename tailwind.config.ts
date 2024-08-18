@@ -1,13 +1,13 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -52,6 +52,25 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        macchiato: {
+          rosewater: "#f4dbd6",
+          flamingo: "#f0c6c6",
+          pink: "#f5bde6",
+          mauve: "#c6a0f6",
+          red: "#ed8796",
+          maroon: "#ee99a0",
+          peach: "#f5a97f",
+          yellow: "#eed49f",
+          green: "#a6da95",
+          teal: "#8bd5ca",
+          sky: "#91d7e3",
+          sapphire: "#7dc4e4",
+          lavender: "#b7bdf8",
+          blue: "#8aadf4",
+          "gray-100": "#cad3f5",
+          "gray-200": "#b8c0e0",
+          "gray-300": "#a5adcb",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -75,6 +94,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;
