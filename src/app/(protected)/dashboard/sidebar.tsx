@@ -1,7 +1,4 @@
-"use client";
-
 import { Separator } from "@/components/ui/separator";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { ContactRound, LogOut } from "lucide-react";
@@ -18,6 +15,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import Account from "./account";
+import Provider from "@/app/providers";
 
 const routes = [
   {
@@ -31,7 +30,7 @@ export default function Sidebar() {
   return (
     <nav className="flex flex-col items-center px-2 py-4 border-r border-slate-700 min-h-full">
       <h1 className="flex items-center">
-        <Link href="/dashboard">
+        <Link href="/dashboard/contact">
           <Image src="/logo.svg" alt="Telepathy" width={24} height={24} />
         </Link>
       </h1>
@@ -56,6 +55,9 @@ export default function Sidebar() {
           </Tooltip>
         </TooltipProvider>
       ))}
+      <Provider>
+        <Account />
+      </Provider>
     </nav>
   );
 }

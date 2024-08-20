@@ -1,6 +1,14 @@
 import Image from "next/image";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Wallet2 } from "lucide-react";
+import Modal from "./modal";
+import Provider from "./providers";
 
 export default function Home() {
   return (
@@ -12,10 +20,16 @@ export default function Home() {
             Telepathy
           </span>
         </h1>
-        <Button className="flex gap-2 bg-macchiato-blue text-slate-800 hover:bg-macchiato-sky">
-          <Wallet2 />
-          <span>Login</span>
-        </Button>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button className="flex space-x-2 bg-macchiato-blue text-slate-800 font-bold hover:bg-latte-blue hover:text-white">
+              <span>Get Started</span>
+            </Button>
+          </DialogTrigger>
+          <Provider>
+            <Modal />
+          </Provider>
+        </Dialog>
       </header>
       <main className="">
         <h2 className="text-macchiato-gray-100 text-4xl font-bold">

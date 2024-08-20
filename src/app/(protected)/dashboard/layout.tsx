@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Sidebar from "./sidebar";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Telepathy - Dashboard",

@@ -7,6 +7,6 @@ export const config = createConfig({
   connectors: [metaMask()],
   ssr: true,
   transports: {
-    [hederaTestnet.id]: http(),
+    [hederaTestnet.id]: http("https://testnet.hashio.io/api"),
   },
 });
