@@ -23,9 +23,7 @@ export default function ContactItem({
     <ContextMenu>
       <ContextMenuTrigger
         className="flex space-x-3 items-center my-1 p-1 rounded hover:bg-slate-700 cursor-pointer"
-        onClick={() => {
-          router.push(`/dashboard/contacts/${nickname}`, { shallow: true });
-        }}
+        onClick={() => {}}
       >
         <Avatar className="w-8 h-8">
           <AvatarImage src={profileUrl} />
